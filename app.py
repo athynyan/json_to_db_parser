@@ -1,7 +1,12 @@
 import json
 import db
+from os import getenv
+from dotenv import load_dotenv
 
-config_file = 'configClear_v2.json'
+#LOAD .ENV TO ENVIRONMENT
+load_dotenv()
+
+config_file = getenv('CONFIG_FILE')
 config = [
     'frinx-uniconfig-topology:configuration',
     'Cisco-IOS-XE-native:native',

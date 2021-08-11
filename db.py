@@ -1,12 +1,17 @@
+from dotenv import load_dotenv
+from os import getenv
 from sqlalchemy import create_engine
 import json
 
+#LOAD .ENV TO ENVIRONMENT
+load_dotenv()
+
 # DATABASE CONFIGURATIONS
-db_name = 'postgres'
-db_user = 'postgres'
-db_pass = 'postgres'
-db_host = 'localhost'
-db_port = '5432'
+db_name = getenv('DB_NAME')
+db_user = getenv('DB_USER')
+db_pass = getenv('DB_PASS')
+db_host = getenv('DB_HOST')
+db_port = getenv('DB_PORT')
 
 # CONNECTING TO POSTGRES DATABASE
 db_string = 'postgresql://{}:{}@{}:{}/{}'.format(db_user, db_pass, db_host, db_port, db_name)
